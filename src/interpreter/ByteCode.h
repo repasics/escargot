@@ -428,7 +428,7 @@ class LoadThisBinding : public ByteCode {
 public:
     LoadThisBinding(const ByteCodeLOC& loc, const size_t dstIndex)
         : ByteCode(Opcode::LoadThisBindingOpcode, loc)
-        , m_dstIndex(dstIndex == REGULAR_REGISTER_LIMIT ? SIZE_MAX : dstIndex)
+        , m_dstIndex(dstIndex == REGULAR_REGISTER_LIMIT ? (uint16_t)SIZE_MAX : dstIndex)
     {
     }
 

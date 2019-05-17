@@ -55,7 +55,10 @@ SET (ESCARGOT_CXXFLAGS_COMMON
 IF (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
     SET (ESCARGOT_CXXFLAGS_COMMON ${ESCARGOT_CXXFLAGS_COMMON} -frounding-math -fsignaling-nans -Wno-unused-but-set-variable -Wno-unused-but-set-parameter -Wno-unused-parameter)
 ELSEIF (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
-    SET (ESCARGOT_CXXFLAGS_COMMON ${ESCARGOT_CXXFLAGS_COMMON} -fno-fast-math -fno-unsafe-math-optimizations -fdenormal-fp-math=ieee -Wno-parentheses-equality -Wno-unused-parameter -Wno-dynamic-class-memaccess -Wno-deprecated-register -Wno-expansion-to-defined -Wno-return-type)
+    SET (ESCARGOT_CXXFLAGS_COMMON ${ESCARGOT_CXXFLAGS_COMMON} -fno-fast-math -fno-unsafe-math-optimizations
+                                  -fdenormal-fp-math=ieee -Wno-parentheses-equality -Wno-unused-parameter
+                                  -Wno-dynamic-class-memaccess -Wno-deprecated-register -Wno-expansion-to-defined
+                                  -Wno-overloaded-virtual -Wno-unused-private-field)
 ELSE()
     MESSAGE (FATAL_ERROR ${CMAKE_CXX_COMPILER_ID} " is Unsupported Compiler")
 ENDIF()
